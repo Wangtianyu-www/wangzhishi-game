@@ -14,6 +14,35 @@ body[data-skin=scholar]{background:radial-gradient(circle at 15% 0%,#bed3e3,tran
 .skin-king{background:linear-gradient(150deg,#fff7d7,#f1d28b);border:3px double #b88a37;box-shadow:0 20px 75px #8e5a1c77}.skin-king .brand{color:#7b4b17;text-shadow:0 2px #fff7c4}.skin-king .stat,.skin-king .tool{background:#fff4cd;border:1px solid #d6aa55}.skin-king .boardwrap{background:linear-gradient(135deg,#c89436,#fff0b3,#c28c32);border:3px solid #a77829;box-shadow:0 0 28px #ffd15d99}.skin-king .tile{box-shadow:0 3px 0 #aa7a27,inset 0 0 0 2px #fff9}.skin-king .progress>div{background:linear-gradient(90deg,#c58b23,#ffdd62)}
 body[data-skin=space] .home{background:radial-gradient(circle at 50% 10%,#7261a8,#29264e)}body[data-skin=king] .home{background:radial-gradient(circle at 50% 10%,#ffe9a0,#a97832)}
 body[data-skin=space] .home-panel{background:#423a69;color:#fff;border-color:#a594e0}body[data-skin=space] .home-panel .brand{color:#fff}body[data-skin=king] .home-panel{background:#fff0c3;border:3px double #ba893b}
+
+/* Cocoa cream visual system */
+:root{--ink:#f5e9e1;--muted:#d1bbb2;--cream:#332522;--gold:#d4a888;--line:#6c5149;--accent:#e4c3aa;font-family:"Arial Rounded MT Bold","YouYuan","幼圆","PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--ink)}
+body{background:radial-gradient(circle at 20% 0%,#5b403a,transparent 48%),radial-gradient(circle at 90% 90%,#49322e,transparent 52%),#291c1a}
+.shell{background:#3c2a27;border:2px solid #72534a;box-shadow:0 20px 65px #150e0d77;color:#f4e9e1}
+.brand{color:#f8eee6;font-weight:950;letter-spacing:1px;text-shadow:0 2px 0 #1d1412}
+.eyebrow{color:#d3ae96}.subtitle,.hinttext{color:#cbb5aa}
+.logo{background:#654941;box-shadow:inset 0 0 0 1px #96766b}
+.levelchip{background:#513b35;border-color:#795e54;color:#e7d6ca}
+.levelchip.active{background:#e4e7e9;color:#342622;border-color:#e4e7e9}
+.stat{background:#e3e7ea;border:1px solid #a8a4a3;color:#352622;box-shadow:0 3px 0 #20161444}
+.stat label{color:#6e5b56}.stat b{color:#332421}
+.goal{color:#f3e7dc}.progress{background:#6d5147}.progress>div{background:linear-gradient(90deg,#d9a889,#f1d2b8)}
+.boardwrap,.skin-classic .boardwrap{background:#59433d;border:2px solid #876b60;box-shadow:inset 0 3px 9px #1b110f77}
+.tile{border-color:#fff8efb8;box-shadow:0 3px 0 #21140e60,inset 0 1px 0 #fff9}
+.tool{background:#e3e7ea;border-color:#d3d6d8;color:#342622;box-shadow:0 3px 0 #20161488}
+.tool small{color:#715c54}.subbutton{background:#594139;border-color:#8a6c61;color:#f6e9e0}
+.mission{color:#e4c4ac}.toast{color:#ffd5b1}
+.home{background:radial-gradient(circle at 50% 10%,#65473f,#2a1c1a 78%)}
+.home-panel{background:#3f2c28;border:2px solid #8b6a5d;color:#f7eae1;box-shadow:0 24px 75px #10090899}
+.home-panel .brand{color:#f7eae1}.home-panel .subtitle,.home-note{color:#d6bfb2}
+.home-cat{background:#6a4a40;border:1px solid #a57e6d}
+.home-actions button{background:#5b4038;color:#f6e9e0;border-color:#896c60;border-radius:15px}
+.home-actions .play{background:#e3e7ea;color:#342622;border-color:#e3e7ea;font-size:18px}
+.skin-grid .skin-preview-classic{background:linear-gradient(145deg,#5d4036,#8a6658);color:#fff1e5}
+.skin-grid .skin-card{border-color:#92766a}.skin-grid .skin-card.active{border-color:#f0d0ad;box-shadow:0 0 0 2px #f0d0ad55}
+.skin-current{color:#e9c8ad}.modal{background:#44302b;border:2px solid #9b7869}.modal h2{color:#fff1e8}.modal p{color:#dfc9bc}
+.primary{background:#e3e7ea;color:#352622}.secondary{background:#634840;color:#fff0e5;border-color:#9b7b6c}
+@media(max-width:420px){.shell{border-radius:22px}.brand{font-size:28px}}
 </style></head><body><section class="home" id="home"><div class="home-panel"><div class="home-cat" id="homeCat"></div><p class="eyebrow">猫咪消除 · 快乐闯关</p><h1 class="brand">王芝士</h1><p class="subtitle">解锁新装扮，和猫咪一起闯关</p><div class="home-actions"><button class="play" id="startGame">开始游戏</button><button id="openSkins">猫咪衣橱</button><button id="homeSound">音效：开</button></div><div class="wardrobe" id="wardrobe"><p>闯关解锁主题装扮</p><div class="skin-grid" id="skinGrid"></div><p class="skin-current" id="skinCurrent">当前装扮：奶油小屋</p></div><p class="home-note" id="homeProgress">进度自动保存在本机浏览器</p></div></section><main class="shell" id="gameShell"><header class="top"><div><div class="eyebrow">猫咪消除 · 二十关冒险</div><h1 class="brand">王芝士</h1><p class="subtitle">六只性格各异的猫咪，开启二十关奇妙冒险。</p></div><div class="logo" id="logo"></div></header><nav class="levelstrip" id="levels" aria-label="关卡选择"></nav><section class="summary"><div class="stat"><label>当前关卡</label><b id="level">01</b></div><div class="stat"><label>积分</label><b id="score">0</b></div><div class="stat"><label>剩余步数</label><b id="moves">20</b></div></section><div class="goal"><span id="goal">目标 0 分</span><span id="status">准备出发 ✦</span></div><div class="progress"><div id="progress"></div></div><div class="mission" id="mission" aria-live="polite"></div><div class="boardwrap"><div class="board" id="board" aria-label="七乘七猫咪消除棋盘"></div></div><div class="tools"><button class="tool" id="hint"><span class="toolicon">✧</span>提示<small id="hintCount">剩余 3 次</small></button><button class="tool" id="hammer"><span class="toolicon">🔨</span>猫爪锤<small id="hammerCount">剩余 2 次</small></button><button class="tool" id="shuffle"><span class="toolicon">⤨</span>洗牌<small id="shuffleCount">剩余 2 次</small></button></div><div class="toast" id="toast" aria-live="polite"></div><div class="foot"><button class="subbutton" id="backHome">⌂ 主菜单</button><button class="subbutton" id="restart">↻ 重玩本关</button><button class="subbutton" id="sound">♫ 音效开启</button></div><p class="hinttext">按住猫咪滑向相邻格子交换 · 连成 3 只或更多即可消除<br>第一关跟随手指完成教学 · 后续关卡有不同任务 · 进度自动保存</p></main><div class="overlay" id="overlay"><div class="modal"><div class="medal" id="medal">🏆</div><h2 id="modalTitle"></h2><p id="modalText"></p><button class="primary" id="modalAction"></button><button class="secondary" id="modalOther" style="display:none">返回选关</button></div></div><script>
 (()=>{'use strict';const W=7,N=49,$=id=>document.getElementById(id),wait=ms=>new Promise(r=>setTimeout(r,ms)),rnd=n=>Math.floor(Math.random()*n);let level=1,unlocked=1,stars={},grid=[],score=0,moves=0,busy=false,armed=false,down=null,token=0,sound=true,audio=null,tools={hint:3,hammer:2,shuffle:2},toastTimer;
 // Each character uses its own ear silhouette, markings, eyes and accessories, not OS-dependent emoji.
